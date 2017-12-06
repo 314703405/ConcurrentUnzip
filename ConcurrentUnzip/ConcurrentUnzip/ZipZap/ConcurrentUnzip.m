@@ -1,15 +1,15 @@
 //
-//  YSPZipManager.m
-//  流解压测试
+//  ConcurrentUnzip.m
+//  ConcurrentUnzip
 //
 //  Created by ZhangChao on 2017/6/15.
 //  Copyright © 2017年 YunShiPei. All rights reserved.
 //
 
-#import "YSPUnZipManager.h"
+#import "ConcurrentUnzip.h"
 #import "ZipZap.h"
 
-@implementation YSPUnZipManager
+@implementation ConcurrentUnzip
 
 + (void)unzipFileWithData:(NSData *)data targetPath:(NSString *)path success:(StatusBlock)status
 {
@@ -34,11 +34,11 @@
     
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    dispatch_semaphore_t sem = dispatch_semaphore_create(3);
+    dispatch_semaphore_t sema = dispatch_semaphore_create(3);
     
     [zz.entries enumerateObjectsUsingBlock:^(ZZArchiveEntry * _Nonnull entry, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        dispatch_semaphore_wait(sem,DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(sema,DISPATCH_TIME_FOREVER);
         
         dispatch_group_async(group, queue, ^{
             
@@ -47,8 +47,6 @@
             NSData *filenamedata = entry.rawFileName;
             
             NSString *filename = [[NSString alloc] initWithData:filenamedata encoding:NSUTF8StringEncoding];
-            
-            // NSLog(@"fileName=%@,currentThread=%@",filename,[NSThread currentThread]);
             
             NSURL* targetPath = [pathUrl URLByAppendingPathComponent:filename];
             
@@ -73,7 +71,7 @@
                 [[entry newDataWithError:nil] writeToURL:targetPath atomically:NO];
             }
             
-            dispatch_semaphore_signal(sem);
+            dispatch_semaphore_signal(sema);
         });
     }];
     

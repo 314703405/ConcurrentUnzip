@@ -14,7 +14,7 @@
 		1F539AC41FD0FBB800E75927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F539AC21FD0FBB800E75927 /* LaunchScreen.storyboard */; };
 		1F539AC71FD0FBB800E75927 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AC61FD0FBB800E75927 /* main.m */; };
 		1F539AFC1FD120F000E75927 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F539ACE1FD120EF00E75927 /* Info.plist */; };
-		1F539AFD1FD120F000E75927 /* YSPUnZipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AD01FD120EF00E75927 /* YSPUnZipManager.m */; };
+		1F539AFD1FD120F000E75927 /* ConcurrentUnzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AD01FD120EF00E75927 /* ConcurrentUnzip.m */; };
 		1F539AFE1FD120F000E75927 /* ZZAESDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AD31FD120F000E75927 /* ZZAESDecryptInputStream.mm */; };
 		1F539AFF1FD120F000E75927 /* ZZArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AD51FD120F000E75927 /* ZZArchive.mm */; };
 		1F539B001FD120F000E75927 /* ZZArchiveEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F539AD71FD120F000E75927 /* ZZArchiveEntry.m */; };
@@ -47,8 +47,8 @@
 		1F539AC51FD0FBB800E75927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F539AC61FD0FBB800E75927 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F539ACE1FD120EF00E75927 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F539ACF1FD120EF00E75927 /* YSPUnZipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPUnZipManager.h; sourceTree = "<group>"; };
-		1F539AD01FD120EF00E75927 /* YSPUnZipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPUnZipManager.m; sourceTree = "<group>"; };
+		1F539ACF1FD120EF00E75927 /* ConcurrentUnzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcurrentUnzip.h; sourceTree = "<group>"; };
+		1F539AD01FD120EF00E75927 /* ConcurrentUnzip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcurrentUnzip.m; sourceTree = "<group>"; };
 		1F539AD11FD120EF00E75927 /* ZipZap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipZap.h; sourceTree = "<group>"; };
 		1F539AD21FD120F000E75927 /* ZZAESDecryptInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAESDecryptInputStream.h; sourceTree = "<group>"; };
 		1F539AD31FD120F000E75927 /* ZZAESDecryptInputStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZAESDecryptInputStream.mm; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				1F539ACE1FD120EF00E75927 /* Info.plist */,
-				1F539ACF1FD120EF00E75927 /* YSPUnZipManager.h */,
-				1F539AD01FD120EF00E75927 /* YSPUnZipManager.m */,
+				1F539ACF1FD120EF00E75927 /* ConcurrentUnzip.h */,
+				1F539AD01FD120EF00E75927 /* ConcurrentUnzip.m */,
 				1F539AD11FD120EF00E75927 /* ZipZap.h */,
 				1F539AD21FD120F000E75927 /* ZZAESDecryptInputStream.h */,
 				1F539AD31FD120F000E75927 /* ZZAESDecryptInputStream.mm */,
@@ -272,7 +272,7 @@
 				1F539B061FD120F000E75927 /* ZZFileChannel.m in Sources */,
 				1F539B081FD120F000E75927 /* ZZInflateInputStream.m in Sources */,
 				1F539B0F1FD120F000E75927 /* ZZStoreOutputStream.m in Sources */,
-				1F539AFD1FD120F000E75927 /* YSPUnZipManager.m in Sources */,
+				1F539AFD1FD120F000E75927 /* ConcurrentUnzip.m in Sources */,
 				1F539B0A1FD120F000E75927 /* ZZNewArchiveEntryWriter.mm in Sources */,
 				1F539AFF1FD120F000E75927 /* ZZArchive.mm in Sources */,
 				1F539AC71FD0FBB800E75927 /* main.m in Sources */,
