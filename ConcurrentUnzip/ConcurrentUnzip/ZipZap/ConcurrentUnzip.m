@@ -15,7 +15,7 @@
 {
     NSError *error = nil;
     
-    ZZArchive *zz = [ZZArchive archiveWithData:data error:&error];
+    ZZArchive *archive = [ZZArchive archiveWithData:data error:&error];
     
     if (error)
     {
@@ -33,12 +33,14 @@
     NSURL* pathUrl = [NSURL fileURLWithPath:path];
     
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    dispatch_semaphore_t sema = dispatch_semaphore_create(3);
     
-    [zz.entries enumerateObjectsUsingBlock:^(ZZArchiveEntry * _Nonnull entry, NSUInteger idx, BOOL * _Nonnull stop) {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(3);
+    
+    [archive.entries enumerateObjectsUsingBlock:^(ZZArchiveEntry * _Nonnull entry, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        dispatch_semaphore_wait(sema,DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER);
         
         dispatch_group_async(group, queue, ^{
             
@@ -71,7 +73,7 @@
                 [[entry newDataWithError:nil] writeToURL:targetPath atomically:NO];
             }
             
-            dispatch_semaphore_signal(sema);
+            dispatch_semaphore_signal(semaphore);
         });
     }];
     

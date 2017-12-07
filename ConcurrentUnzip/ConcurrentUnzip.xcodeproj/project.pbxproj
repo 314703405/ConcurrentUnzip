@@ -36,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F34FA121FD795FD008DF80B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1F539AB41FD0FBB800E75927 /* ConcurrentUnzip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcurrentUnzip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F539AB71FD0FBB800E75927 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F539AB81FD0FBB800E75927 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,11 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F34FA111FD795FD008DF80B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F34FA121FD795FD008DF80B /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1F539AAB1FD0FBB800E75927 = {
 			isa = PBXGroup;
 			children = (
 				1F539AB61FD0FBB800E75927 /* ConcurrentUnzip */,
 				1F539AB51FD0FBB800E75927 /* Products */,
+				1F34FA111FD795FD008DF80B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
